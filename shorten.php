@@ -18,6 +18,10 @@ do {
 
 $_POST['stored_url'] = pg_escape_string($conn, $_POST['stored_url']);
 
+if (!filter_var($_POST['stored_url'], FILTER_VALIDATE_URL)) {
+    $_POST['stored_url'] = "http://{$_POST['stored_url']}";
+}
+
 pg_insert($conn, 'urls', $_POST);
 pg_close($conn);
 
