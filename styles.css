@@ -130,11 +130,16 @@ body, .fancy-form input, .fancy-form .content-name {
 }
 
 .php {
-    position: absolute;
-    top: 50%;
-    left: 43%;
+    position: relative;
     z-index: 0;
+    margin: 30px 200px 0 0;
     animation: 1s linear infinite alternate phpHop;
+}
+
+@media (max-width: 858px) {
+    body {
+        width: 95vw;
+    }
 }
 
 @keyframes phpHop {
