@@ -19,9 +19,11 @@ if (!filter_var($_POST['stored_url'], FILTER_VALIDATE_URL)) {
     $_POST['stored_url'] = "http://{$_POST['stored_url']}";
 }
 
-if (!pg_insert($conn, 'urls', $_POST, PGSQL_DML_ESCAPE)) {
+$_POST['stored_url'] = pg_escape_string($_POST['stored_url']);
+
+if (!pg_insert($conn, 'urls', $_POST)) {
     pg_query('DELETE FROM urls WHERE id = (SELECT min(id) FROM urls);');
-    pg_insert($conn, 'urls', $_POST, PGSQL_DML_ESCAPE);
+    pg_insert($conn, 'urls', $_POST);
 }
 
 pg_close($conn);
