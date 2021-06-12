@@ -4,14 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
     <title>url-shortener</title>
 </head>
 
 <body>
+    <div class="circle" style="top:0vh;left:0vw;animation-delay:0.25s;"></div>
+    <div class="circle" style="top:10vh;left:10vw;animation-delay:0.5s;"></div>
+    <div class="circle" style="top:20vh;left:20vw;animation-delay:0.75s;"></div>
+    <div class="circle" style="top:30vh;left:30vw;animation-delay:1s;"></div>
+    <div class="circle" style="top:40vh;left:40vw;animation-delay:1.25s;"></div>
+    <div class="circle" style="top:50vh;left:50vw;animation-delay:1.5s;"></div>
+    <div class="circle" style="top:60vh;left:60vw;animation-delay:1.75s;"></div>
+    <div class="circle" style="top:70vh;left:70vw;animation-delay:2s;"></div>
+    <div class="circle" style="top:80vh;left:80vw;animation-delay:2.25s;"></div>
+    <div class="circle" style="top:90vh;left:90vw;animation-delay:2.5s;"></div>
+    <div class="circle" style="top:100vh;left:100vw;animation-delay:2.75s;"></div>
     <form action="shorten.php" method="POST">
-        <input type="text" name="stored_url" placeholder="url">
+        <div class="margin-top-40">
+            <div class="center z-index">url-shortener</div>
+            <div class="fancy-form z-index">
+                <input type="text" id="input" name="stored_url" spellcheck="false" placeholder=" ">
+                <label for="stored_url" class="label-name"><span class="content-name">url to shorten...</span></label>
+            </div>
+        </div>
     </form>
+    <script>document.getElementById('input').focus()</script>
 </body>
 
 </html>
