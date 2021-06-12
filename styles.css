@@ -4,11 +4,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     border: 0;
     font-size: 100%;
     font: inherit;
-    vertical-align: baseline
+    vertical-align: baseline;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-    display: block
+    display: block;
 }
 
 body {
@@ -21,29 +21,29 @@ body {
 
 body, input {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 25pt
+    font-size: 25pt;
 }
 
 ol, ul {
-    list-style: none
+    list-style: none;
 }
 
 blockquote, q {
-    quotes: none
+    quotes: none;
 }
 
 blockquote:before, blockquote:after, q:before, q:after {
     content: '';
-    content: none
+    content: none;
 }
 
 table {
     border-collapse: collapse;
-    border-spacing: 0
+    border-spacing: 0;
 }
 
 a {
-    color: #e4e4e4
+    color: #e4e4e4;
 }
 
 .fancy-form {
@@ -59,7 +59,7 @@ a {
     padding-top: 20px;
     border: none;
     outline: none;
-    background-color: transparent
+    background-color: transparent;
 }
 
 body, .fancy-form input, .fancy-form .content-name {
@@ -73,7 +73,7 @@ body, .fancy-form input, .fancy-form .content-name {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    border-bottom: 3px solid #e4e4e4
+    border-bottom: 3px solid #e4e4e4;
 }
 
 .fancy-form label::after {
@@ -85,7 +85,7 @@ body, .fancy-form input, .fancy-form .content-name {
     height: 100%;
     border-bottom: 3px solid #ff4c64;
     transform: translateX(-100%);
-    transition: transform 0.3s ease
+    transition: transform 0.3s ease;
 }
 
 .content-name {
@@ -93,23 +93,23 @@ body, .fancy-form input, .fancy-form .content-name {
     bottom: 5px;
     left: 0px;
     transition: all 0.4s ease;
-    color: #000
+    color: #000;
 }
 
 .fancy-form input:focus+.label-name .content-name, .fancy-form input:not(:placeholder-shown)+.label-name .content-name {
-    opacity: 0
+    opacity: 0;
 }
 
 .fancy-form input:focus+.label-name::after, .fancy-form input:not(:placeholder-shown)+.label-name::after {
-    transform: translateX(0%)
+    transform: translateX(0%);
 }
 
 .margin-top-40 {
-    margin-top: 40%
+    margin-top: 40%;
 }
 
 .center {
-    text-align: center
+    text-align: center;
 }
 
 .circle {
@@ -126,7 +126,7 @@ body, .fancy-form input, .fancy-form .content-name {
 
 .z-index {
     position: relative;
-    z-index: 1
+    z-index: 1;
 }
 
 .php {
@@ -139,6 +139,7 @@ body, .fancy-form input, .fancy-form .content-name {
 @media (max-width: 858px) {
     body {
         width: 95vw;
+        font-size: 20pt;
     }
 }
 
