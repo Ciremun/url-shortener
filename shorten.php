@@ -8,23 +8,20 @@ $counter = 0;
 
 do {
     $url_id_length = intval(get_server_state('url_id_length')[0]['v']);
-    if ($counter > 10) {
+    if ($counter++ > 10) {
         $url_id_length *= 2;
         update_server_state('url_id_length', strval($url_id_length));
     }
     $_POST['url_id'] = bin2hex(random_bytes($url_id_length));
-    $counter++;
 } while (!empty(pg_select($conn, 'urls', array('url_id' => $_POST['url_id']))));
-
-$_POST['stored_url'] = pg_escape_string($conn, $_POST['stored_url']);
 
 if (!filter_var($_POST['stored_url'], FILTER_VALIDATE_URL)) {
     $_POST['stored_url'] = "http://{$_POST['stored_url']}";
 }
 
-if (!pg_insert($conn, 'urls', $_POST)) {
+if (!pg_insert($conn, 'urls', $_POST, PGSQL_DML_ESCAPE)) {
     pg_query('DELETE FROM urls WHERE id = (SELECT min(id) FROM urls);');
-    pg_insert($conn, 'urls', $_POST);
+    pg_insert($conn, 'urls', $_POST, PGSQL_DML_ESCAPE);
 }
 
 pg_close($conn);
